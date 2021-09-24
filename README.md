@@ -9,7 +9,7 @@
 1) You need to install [Docker](https://docs.docker.com/get-docker)
    and [Docker Compose](https://docs.docker.com/compose/install)
 2) Open Terminal
-3) `cd <folder with the project>/stchb`
+3) `cd <folder with the project>/c-ads`
 4) `docker-compose up -d --build --remove-orphans`
 
 ## Development
