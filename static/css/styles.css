@@ -1,0 +1,389 @@
+
+    .body{
+	width: 100%;
+	margin-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: 'Raleway', sans-serif;
+	background-color: #fff;
+}
+
+.container{
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	text-align: center;
+}
+.header_iner{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid;
+	padding: 25px;
+	border-color:#696875;
+
+
+}
+*,
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+.nav_link{
+	text-decoration: none;
+	margin-left: 25px;
+	color: #696875;
+	text-transform: uppercase;
+	font-weight: bold;
+
+}
+.nav_link:hover{
+	color:#47474f;
+	transition: 0.1s linear;
+}
+.nav_link:first-child{
+margin-left: 0;
+}
+.header{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+}
+.header_logo{
+	font-size: 40px;
+	color:#696875;
+	font-weight: bold;
+
+}
+.nav{
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+.intro{
+	height:980px;
+	width: 1840px;
+	background: url(img/bg4.jpg) center no-repeat;
+	background-size: 100%;
+	padding-top: 85px;
+	box-shadow: 5px 5px 10px 10px;
+	color:#86868a;
+
+
+}
+.nav_link1{
+	text-decoration: none;
+	color:#696875;
+	margin-left: 25px;
+	padding: 8px;
+	 border-radius:10px;
+	 text-transform: uppercase;
+	 font-weight: bold;
+	 border: 1px solid #696875;
+}
+.nav_link1:hover{
+	background-color:#47474f;
+	transition: 0.2s linear;
+	color: #fff;
+}
+
+
+.intro__title{
+	padding-top: 100px;
+	margin: 0;
+	color:#696875;
+	text-transform: uppercase;
+	text-align:left;
+	flex-direction: column;
+	font-size: 80px;
+	opacity: 0.75;
+	width:800px;
+
+}
+.intro_inner{
+	width: 100%;
+	margin: 0 auto;
+}
+.intro_subtitle{
+	padding-top: 20px;
+	margin: 0;
+	color:#696875;
+	text-transform: uppercase;
+	text-align: left;
+	flex-direction: column;
+	font-size: 18px;
+}
+.btn{
+ padding: 12px;
+ padding-right: 30px;
+ padding-left: 30px;
+	font-size: 20px;
+	margin: 0;
+	color:#696875;
+	text-decoration: none;
+	text-align: left;
+	background-color:#a5a5a8;
+	max-width: 140px;
+	border-radius: 12px;
+}
+.btn:hover{
+ color:#a5a5a8;
+ background-color:#696875;
+ transition: .2s linear;
+ cursor: pointer;
+}
+.intro_btn{
+	padding-top: 10px;
+	text-align: left;
+}
+
+.footer{
+	width: 100%;
+	height: 750px;
+
+
+}
+.footer_title{
+	text-align: left;
+	text-transform: uppercase;
+	color:#696875 ;
+}
+.footer_subtitle{
+	text-align: left;
+	text-transform: uppercase;
+	line-height: 0;
+    color: #696875;
+
+}
+.items{
+	padding: 20px;
+	padding-left: 150px;
+}
+
+.img_logo{
+	width: 590px;
+	height: 550px;
+	float: left;
+	border-radius: 20px;
+	margin-top: 20px;
+}
+.p_text{
+	color:#696875 ;
+	font-size: 25px;
+	padding: 0 250px 35px 650px;
+	text-align:left;
+	margin-left:-15px;
+
+
+
+}
+.header_text{
+ color:#696875;
+ font-size:40px;
+ padding-right: 260px;
+ margin-bottom: -20px;
+
+}
+
+.body{
+	width: 100%;
+	margin-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: 'Raleway', sans-serif;
+	background-color: #fff;
+}
+
+.container{
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	text-align: center;
+}
+.header_iner{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid;
+	padding: 25px;
+	border-color:#696875;
+
+
+}
+.nav_link{
+	text-decoration: none;
+	margin-left: 25px;
+	color: #696875;
+	text-transform: uppercase;
+	font-weight: bold;
+
+}
+.nav_link:hover{
+	color:#47474f;
+	transition: 0.1s linear;
+}
+.nav_link:first-child{
+margin-left: 0;
+}
+.header{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+}
+.header_logo{
+	font-size: 40px;
+	color:#696875;
+	font-weight: bold;
+
+}
+.nav{
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+
+.nav_link1{
+	text-decoration: none;
+	color:#696875;
+	margin-left: 25px;
+	padding: 8px;
+	 border-radius:10px;
+	 text-transform: uppercase;
+	 font-weight: bold;
+	 border: 1px solid #696875;
+}
+.nav_link1:hover{
+	background-color:#47474f;
+	transition: 0.2s linear;
+	color: #fff;
+}
+
+
+.intro__title{
+	padding-top: 100px;
+	margin: 0;
+	color:#696875;
+	text-transform: uppercase;
+	text-align:left;
+	flex-direction: column;
+	font-size: 80px;
+	opacity: 0.75;
+	width:800px;
+
+}
+* {
+   box-sizing: border-box;
+}
+.baza {
+  position: relative;
+   max-width: 400px;
+   padding: 60px 50px;
+   margin: 130px auto 0;
+   background-image: url(img/bg3.png);
+   border-radius: 30px;
+}
+.baza:before {
+  position: absolute;
+
+}
+.tabl {
+   position: relative;
+}
+.tabl h1 {
+   position: relative;
+   margin-top: 0;
+   color: #696875;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 600;
+   font-size: 30px;
+   text-transform: uppercase;
+}
+.tabl h1:after {
+
+   position: absolute;
+   left: 0;
+   bottom: -6px;
+   height: 2px;
+   width: 80px;
+}
+.tabl label {
+   display: block;
+   padding-left: 15px;
+   font-family: 'Raleway', sans-serif;
+   color: #696875;
+   font-weight: 400;
+   text-transform: uppercase;
+   font-size: 17px;
+}
+.tabl input {
+  display: block;
+   width: 100%;
+   padding: 0 15px;
+   margin: 10px 0 15px;
+   border-width: 0;
+   line-height: 40px;
+   border-radius: 20px;
+   color: black;
+   font-size: 20px;
+   background: #dbdbe4f3;
+   font-family: 'Raleway', sans-serif;
+}
+.tabl input[type="checkbox"] {
+   position: absolute;
+   opacity: 0;
+}
+.form-inner input[type="checkbox"] {
+   position: absolute;
+   opacity: 0;
+}
+#custom-checkbox+label {
+   position: relative;
+   margin: 20px 0;
+   text-transform: none;
+   cursor: pointer;
+}
+#custom-checkbox+label:before {
+   content: "";
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   margin-right: 10px;
+   vertical-align: text-top;
+   background: rgb(170, 165, 165);
+}
+#custom-checkbox:checked+label:before {
+   background: rgb(114, 110, 110);
+}
+#custom-checkbox:checked+label:after {
+   content: "";
+   position: absolute;
+   width: 2px;
+   height: 2px;
+   left: 20px;
+   top: 9px;
+   background: white;
+   box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+   transform: rotate(45deg);
+}
+.tabl input[type="submit"] {
+   background: #616264;
+   color: rgb(221, 221, 233);
+   font-size: 20px;
+   margin: 10% 0 0 0;
+   -webkit-transition-duration: 0.4s;
+   transition-duration: 0.4s;
+}
+.tabl input[type="submit"]:hover{
+  background-color: #8c8e91;
+  color: white;
+
+}
+
+
+
+
+

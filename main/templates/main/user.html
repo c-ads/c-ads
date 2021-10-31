@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+
+
+{% block body %}
+    {{ data.login }}
+    {% for item in data %}
+        <div class="container">
+        <p>
+            {{ item.login }}: {{ item.password }}
+        </p>
+        {% if item.photo %}
+            <img src="{{ item.photo.url }}" width="500px" height="400px" alt="bad"></p>
+
+        {% else %}
+            {% load static %}
+            <img src="{% static 'css/img/IMG_8010.JPG' %} " width="500px" height="400px" class="img_logo">
+        {% endif %}
+
+
+        {% for info in post %}
+            <p>
+                <a href="/user/{{ item.login }}/{{ info.id }}/"><img src=" {{ info.user_photos.url }} " width="500px"
+                                                                     height="400px" alt="Bad"></a>
+                <span>{{ info.date|date:'Y-m-d'}}</span>
+                <span>{{ info.data }}</span>
+            </p>
+
+        {% endfor %}
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  cads_web:
+    container_name: 'cads_web'
+    restart: always
+    build: .
+    command: python /usr/src/c-ads/manage.py runserver 0.0.0.0:8000
+    ports:
+      - '8000:8000'
