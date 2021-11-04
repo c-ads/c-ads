@@ -1,6 +1,18 @@
 from django.db import models
 
-# Create your models here.
+"""
+Main users
+id INT;
+login VARCHAR
+password VARCHAR
+info TEXT
+photo IMAGE
+Age INT
+IsStudent BOOLEAN
+email VarChar
+"""
+
+
 class Users(models.Model):
     objects = None
     login = models.CharField(max_length=25)  # You can add verbose_name='...' to change tha name of column
@@ -8,6 +20,8 @@ class Users(models.Model):
     photo = models.ImageField(upload_to='photos/avatar', blank=True)
     email = models.EmailField(max_length=40)
     cookies = models.TextField(default='')
+    description = models.TextField(default='', blank=True)
+    age = models.IntegerField(default='18', blank=True)
 
     def __str__(self):
         return self.login

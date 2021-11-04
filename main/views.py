@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, redirect
 from .forms import RegForm, LogForm
 from .models import Users, Posts, Comments
@@ -64,12 +61,16 @@ def sign_up(request):
 
 def user(request, user_login):
     data = Users.objects.filter(login=user_login)
-
+    k = 0
     user_id = None
     for i in data:
         user_id = i.id
+        user_photo = i.photo
     post = Posts.objects.filter(user_id_id=user_id)
-    return render(request, 'main/user.html', {'data': data, 'post': post})
+    for j in post:
+        k += 1
+
+    return render(request, 'main/user.html', {'data': data, 'post': post, 'k': k})
 
 
 def post(request, user_login, post_id):
