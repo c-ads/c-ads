@@ -1,16 +1,5 @@
+from __future__ import unicode_literals
 from django.db import models
-
-"""
-Main users
-id INT;
-login VARCHAR
-password VARCHAR
-info TEXT
-photo IMAGE
-Age INT
-IsStudent BOOLEAN
-email VarChar
-"""
 
 
 class Users(models.Model):
