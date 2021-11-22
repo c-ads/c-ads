@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+<script lang="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>SAPRGRAM</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body class="body">
+<header class="header">
+    <div class="container">
+        <div class="header_iner">
+            <div class="header_logo"><a href="{% url 'saprgramapp:home' %}" class="nav_link">SAPRGRAM</a></div>
+            <nav class="nav">
+                <a href="#" class="nav_link">Our team</a>
+                <a href="#" class="nav_link">Forum</a>
+                <a href="#" class="nav_link">About us</a>
+                <a href="{% url 'saprgramapp:registration' %}" class="nav_link1">Sign up</a>
+                <a href="{% url 'saprgramapp:login' %}" class="nav_link1">Sign in</a>
+            </nav>
+        </div>
+    </div>
+</header>
+{% block body %}{% endblock %}
+</body>
+</html>

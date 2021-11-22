@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+    <form class="baza" method="POST">
+        {% csrf_token %}
+        <div class="tabl">
+            <h1>Sign up</h1>
+            {{ form.errors }}
+            <label for="email">Email</label>
+            {{ form.email }}
+            <label for="username">Username</label>
+            {{ form.username }}
+            <label for="password">Password</label>
+            {{ form.password }}
+            <input type="submit" value="Send">
+        </div>
+    </form>
+{% endblock %}
