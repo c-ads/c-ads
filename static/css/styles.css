@@ -116,7 +116,7 @@ form {
     left: 180px;
     margin-top: 20px;
 }
-input, button {
+input {
     border: none;
     outline: none;
     border-radius: 10px;
@@ -127,22 +127,7 @@ input {
     background: #F9F0DA;
     padding-left: 15px;
 }
-button {
-    height: 26px;
-    width: 26px;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: #696875;
-    cursor: pointer;
-}
-button:before {
-    content: "\25b6";
-    font-family:'Raleway', sans-serif;
-    color: #F9F0DA;
 
-    font-weight: bold;
-}
 
 .shine-button {
     text-decoration: none;

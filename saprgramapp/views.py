@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.conf import settings
 from .models import Publication, Comments
 from .forms import *
@@ -88,13 +88,14 @@ def user_page_view(request, username):
 
         os.chdir(path + '\\media\\photos\\avatar')
         photo = request.FILES['avatar_photo']
-        form = ImageLoadForm(request.POST, request.FILES)
-        print
-        if form.is_valid() and not os.path.exists(str(photo)):
-            user_data = User.objects.get(username=username)
-            user_data.avatar_photo = 'photos/avatar/' + str(photo)
-            user_data.save()
-            form.save()
+        user_data = get_object_or_404(User, username=username)
+        form = ImageLoadForm(data=request.POST, files=request.FILES, instance=user_data)
+
+        if form.is_valid():
+
+            if not os.path.exists(str(photo)):
+                form.save(commit=True)
+    user_data = User.objects.get(username=username)
     context = {
         'user_data': user_data,
         'number_of_posts': len(user_publications),

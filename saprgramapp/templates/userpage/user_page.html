@@ -70,7 +70,11 @@
                 <button class="shine-button2">Add</button>
                 <div class="row">
                     {% for item in user_posts%}
-                        <div class="col-lg-6 pl-lg-1 mb-2"><img src="{{ item.user_photo.url }}" width="200px" heigth="300px" alt="" class="img-fluid rounded shadow-sm"></div>
+                        <div class="col-lg-6 pl-lg-1 mb-2" >
+                            <a href="{{ item.user_photo.url }}" class="fancybox" data-fancybox="gallery1">
+                                <img src="{{ item.user_photo.url }}" width="200px" heigth="300px" alt="" class="img-fluid rounded shadow-sm">
+                            </a>
+                        </div>
                     {% endfor%}
                 </div>
 

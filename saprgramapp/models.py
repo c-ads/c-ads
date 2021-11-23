@@ -2,8 +2,12 @@ from django.db import models
 from authentication.models import User
 
 
+def user_directory_path(instance, filename):
+    return 'photos/publications/{0}'.format(instance.user.username)
+
+
 class Publication(models.Model):
-    user_photo = models.ImageField(upload_to='photos/publications')  # Photo
+    user_photo = models.ImageField(upload_to=user_directory_path)  # Photo
     data = models.TextField(blank=True)  # Description under the photo
     date = models.DateTimeField(auto_now_add=True)  # Date of creation
     user = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True, default=None)
