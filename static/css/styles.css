@@ -109,13 +109,7 @@
 
 }
 * {box-sizing: border-box;}
-form {
-    position: relative;
-    width: 250px;
 
-    left: 180px;
-    margin-top: 20px;
-}
 input {
     border: none;
     outline: none;

@@ -9,10 +9,7 @@
         <div class="col-md-5 mx-auto pt-5 mt-5">
             <div class="bg-white shadow rounded overflow-hidden">
                 <div class="px-4 pt-0 pb-4 cover">
-                    <form>
-                        <input type="text" placeholder="People">
-                        <button type="submit"></button>
-                    </form>
+
                     <button class="shine-button">Edit</button>
                     <div class="media align-items-end sprofile-head">
 
@@ -67,11 +64,11 @@
                 <div class="d-flex align-items-center justify-content-between mb-3 py-2">
                     <h4 class="mb-0"> Photo</h4>
                 </div>
-                <button class="shine-button2">Add</button>
+                <a href="{% url 'saprgramapp:add_pub' %}" class="shine-button2">Add</a>
                 <div class="row">
                     {% for item in user_posts%}
                         <div class="col-lg-6 pl-lg-1 mb-2" >
-                            <a href="{{ item.user_photo.url }}" class="fancybox" data-fancybox="gallery1">
+                            <a href="{{ item.user_photo.url }}" >{# add class class="fancybox" data-fancybox="gallery1" to work with JS #}
                                 <img src="{{ item.user_photo.url }}" width="200px" heigth="300px" alt="" class="img-fluid rounded shadow-sm">
                             </a>
                         </div>

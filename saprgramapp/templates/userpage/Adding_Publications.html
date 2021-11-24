@@ -1,0 +1,6 @@
+{% load static %}
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="shine-button">Submit</button>
+    </form>

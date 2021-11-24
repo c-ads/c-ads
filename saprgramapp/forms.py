@@ -1,6 +1,7 @@
 from django.forms import ModelForm, TextInput, FileInput
 
 from authentication.models import User
+from .models import Publication
 
 
 class RegistrationForm(ModelForm):
@@ -53,5 +54,22 @@ class ImageLoadForm(ModelForm):
                 'id': 'avatar',
                 'type': 'file',
                 'placeholder': 'Upload photo'
+            })
+        }
+
+
+class AddingPublicationForm(ModelForm):
+    class Meta:
+        model = Publication
+        fields = ['user_photo', 'data']
+        widgets = {
+            'user_photo': FileInput(attrs={
+                'id': 'avatar',
+                'type': 'file',
+                'placeholder': 'Upload photo'
+            }),
+            'data': TextInput(attrs={
+                'id': 'pub_data',
+                'type': 'text'
             })
         }

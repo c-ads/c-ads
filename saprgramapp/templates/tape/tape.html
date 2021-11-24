@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block body %}
+    {% for post in posts %}
+        <div>
+            <img src="{{ post.user_photo.url }}" alt="" width="500" height="500">
+            <p>
+                <span>{{ post.data }}</span>
+                <span>{{ post.date | date:"Y M d" }}</span>
+            </p>
+        </div>
+    {% endfor %}
+{% endblock %}

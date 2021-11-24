@@ -3,7 +3,7 @@ from authentication.models import User
 
 
 def user_directory_path(instance, filename):
-    return 'photos/publications/{0}'.format(instance.user.username)
+    return 'photos/publications/user_{0}/{1}'.format(instance.user.id, filename)
 
 
 class Publication(models.Model):
