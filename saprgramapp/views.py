@@ -86,7 +86,7 @@ def user_login_view(request):
 
 
 def user_page_view(request, username):
-    jwt.decode(request.COOKIES['JWT_TOKEN'][2:-1], settings.SECRET_KEY, algorithms=["HS256"])
+    public = jwt.decode(request.COOKIES['JWT_TOKEN'][2:-1], settings.SECRET_KEY, algorithms=["HS256"])
     user_data = User.objects.get(username=username)
     user_publications = Publication.objects.filter(user_id=user_data.pk)
     form = ImageLoadForm()
@@ -102,12 +102,22 @@ def user_page_view(request, username):
             if not os.path.exists(str(photo)):
                 form.save(commit=True)
     user_data = User.objects.get(username=username)
-    context = {
-        'user_data': user_data,
-        'number_of_posts': len(user_publications),
-        'user_posts': user_publications,
-        'form': form
-    }
+    if public['id'] == user_data.id:
+        context = {
+            'user_data': user_data,
+            'number_of_posts': len(user_publications),
+            'user_posts': user_publications,
+            'form': form,
+            'logged': 1
+        }
+    else:
+        context = {
+            'user_data': user_data,
+            'number_of_posts': len(user_publications),
+            'user_posts': user_publications,
+            'logged': 0
+        }
+    print(context['logged'])
     return render(request, 'userpage/user_page.html', context)
 
 

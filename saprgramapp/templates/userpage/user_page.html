@@ -9,8 +9,11 @@
         <div class="col-md-5 mx-auto pt-5 mt-5">
             <div class="bg-white shadow rounded overflow-hidden">
                 <div class="px-4 pt-0 pb-4 cover">
-
+                    {% if logged == 1 %}
                     <button class="shine-button">Edit</button>
+                    {% else %}
+
+                    {% endif %}
                     <div class="media align-items-end sprofile-head">
 
                             {% if user_data.avatar_photo %}
@@ -64,7 +67,11 @@
                 <div class="d-flex align-items-center justify-content-between mb-3 py-2">
                     <h4 class="mb-0"> Photo</h4>
                 </div>
+                {% if logged == 1 %}
                 <a href="{% url 'saprgramapp:add_pub' %}" class="shine-button2">Add</a>
+                {% else %}
+
+                {% endif%}
                 <div class="row">
                     {% for item in user_posts%}
                         <div class="col-lg-6 pl-lg-1 mb-2" >
@@ -79,10 +86,14 @@
         </div>
 
     </div>
+    {% if logged == 1 %}
     <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
         <label for="file">Upload file:</label>
     {{ form }}
         <button type="submit">Submit</button>
     </form>
+    {% else %}
+
+    {% endif %}
 {% endblock %}
