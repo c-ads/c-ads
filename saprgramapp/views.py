@@ -144,10 +144,14 @@ def user_edit_page(request):
 
         user_data = get_object_or_404(User, id=public['id'])
         form = UserEditForm(data=request.POST, files=request.FILES, instance=user_data)
-        print(form.errors)
+
         if form.is_valid():
-            photo = request.FILES['avatar_photo']
-            if not os.path.exists(str(photo)):
+            if request.FILES:
+                photo = request.FILES['avatar_photo']
+                if not os.path.exists(str(photo)):
+                    form.save(commit=True)
+            else:
+
                 form.save(commit=True)
     context = {
        'user_data': user_data,

@@ -56,7 +56,7 @@ class UserEditForm(ModelForm):
             'email': TextInput(attrs={
                 'type': 'text',
                 'class': 'form-control',
-                'placeholder': 'Enter your email'
+                'placeholder': 'Enter your email',
             }),
             'github': TextInput(attrs={
                 'type': 'text',
