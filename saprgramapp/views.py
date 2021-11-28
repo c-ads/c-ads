@@ -89,31 +89,18 @@ def user_page_view(request, username):
     public = jwt.decode(request.COOKIES['JWT_TOKEN'][2:-1], settings.SECRET_KEY, algorithms=["HS256"])
     user_data = User.objects.get(username=username)
     user_publications = Publication.objects.filter(user_id=user_data.pk)
-    form = ImageLoadForm()
-    if request.method == 'POST':
 
-        os.chdir(str(BASE_DIR) + '\\media\\photos\\avatar')
-
-        user_data = get_object_or_404(User, username=username)
-        form = ImageLoadForm(data=request.POST, files=request.FILES, instance=user_data)
-
-        if form.is_valid() and request.FILES:
-            photo = request.FILES['avatar_photo']
-            if not os.path.exists(str(photo)):
-                form.save(commit=True)
     user_data = User.objects.get(username=username)
     if public['id'] == user_data.id:
         context = {
             'user_data': user_data,
-            'number_of_posts': len(user_publications),
             'user_posts': user_publications,
-            'form': form,
             'logged': 1
         }
+
     else:
         context = {
             'user_data': user_data,
-            'number_of_posts': len(user_publications),
             'user_posts': user_publications,
             'logged': 0
         }
@@ -145,3 +132,25 @@ def tape_view(request):
         'posts': posts
     }
     return render(request, 'tape/tape.html', context)
+
+
+def user_edit_page(request):
+    public = jwt.decode(request.COOKIES['JWT_TOKEN'][2:-1], settings.SECRET_KEY, algorithms=["HS256"])
+    user_data = User.objects.get(pk=public['id'])
+    form = UserEditForm()
+    if request.method == 'POST':
+
+        os.chdir(str(BASE_DIR) + '\\media\\photos\\avatar')
+
+        user_data = get_object_or_404(User, id=public['id'])
+        form = UserEditForm(data=request.POST, files=request.FILES, instance=user_data)
+        print(form.errors)
+        if form.is_valid():
+            photo = request.FILES['avatar_photo']
+            if not os.path.exists(str(photo)):
+                form.save(commit=True)
+    context = {
+       'user_data': user_data,
+        'form': form
+    }
+    return render(request, 'userpage/Editting_page.html', context)

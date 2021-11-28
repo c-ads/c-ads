@@ -43,6 +43,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     avatar_photo = models.ImageField(upload_to='photos/avatar', blank=True)
     user_description = models.TextField(default='', blank=True)
     user_course = models.IntegerField(default='0', blank=True)
+    instagram = models.CharField(max_length=20, blank=True, default='')
+    github = models.CharField(max_length=20, blank=True, default='')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'password']

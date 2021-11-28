@@ -45,16 +45,39 @@ class LoginForm(ModelForm):
         }
 
 
-class ImageLoadForm(ModelForm):
+class UserEditForm(ModelForm):
     class Meta:
         model = User
-        fields = ['avatar_photo']
+        fields = ['avatar_photo', 'email', 'github', 'instagram', 'user_course', 'user_description']
         widgets = {
             'avatar_photo': FileInput(attrs={
-                'id': 'avatar',
                 'type': 'file',
-                'placeholder': 'Upload photo'
-            })
+            }),
+            'email': TextInput(attrs={
+                'type': 'text',
+                'class': 'form-control',
+                'placeholder': 'Enter your email'
+            }),
+            'github': TextInput(attrs={
+                'type': 'text',
+                'class': 'form-control',
+                'placeholder': 'Enter your github username '
+            }),
+            'instagram': TextInput(attrs={
+                'type': 'text',
+                'class': 'form-control',
+                'placeholder': 'Enter your instagram'
+            }),
+            'user_course': TextInput(attrs={
+                'type': 'text',
+                'class': 'form-control',
+                'placeholder': 'Enter your course'
+            }),
+            'user_description': TextInput(attrs={
+                'type': 'text',
+                'class': 'form-control',
+                'placeholder': 'Enter description of your profile'
+            }),
         }
 
 
