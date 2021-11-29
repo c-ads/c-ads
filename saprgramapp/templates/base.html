@@ -19,9 +19,8 @@
         <div class="header_iner">
             <div class="header_logo"><a href="{% url 'saprgramapp:home' %}" class="nav_link">SAPRGRAM</a></div>
             <nav class="nav_2">
-                <a href="#" class="nav_link">Our team</a>
-                <a href="#" class="nav_link">Forum</a>
-                <a href="#" class="nav_link">About us</a>
+                <a href="{% url 'saprgramapp:ourTeam' %}" class="nav_link">Our team</a>
+                <a href="#" class="nav_link">Tape</a>{# href="{% url 'saprgramapp:tape' %}" #}
                 <a href="{% url 'saprgramapp:registration' %}" class="nav_link1">Sign up</a>
                 <a href="{% url 'saprgramapp:login' %}" class="nav_link1">Sign in</a>
             </nav>

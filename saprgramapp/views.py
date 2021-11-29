@@ -158,3 +158,7 @@ def user_edit_page(request):
         'form': form
     }
     return render(request, 'userpage/Editting_page.html', context)
+
+
+def our_team_view(request):
+    return render(request, 'home/ourTeam.html')
