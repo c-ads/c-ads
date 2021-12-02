@@ -74,7 +74,7 @@ def user_login_view(request):
         if 'errors' in json:
             context['form'].login_errors = 'Invalid email or password.'
         else:
-            response = redirect('/user/{0}/'.format(json['user']['username']))
+            response = redirect('/user/')
             response.set_cookie('JWT_TOKEN', json['user']['token'])
             os.chdir(str(BASE_DIR) + f'\\media\\photos\\publications')
             user_dir = f'user_{User.objects.get(email=email).id}'
@@ -85,12 +85,12 @@ def user_login_view(request):
     return render(request, 'authentication/user_login.html', context)
 
 
-def user_page_view(request, username):
+def user_page_view(request):
     public = jwt.decode(request.COOKIES['JWT_TOKEN'][2:-1], settings.SECRET_KEY, algorithms=["HS256"])
-    user_data = User.objects.get(username=username)
+    user_data = User.objects.get(pk=public['id'])
     user_publications = Publication.objects.filter(user_id=user_data.pk)
 
-    user_data = User.objects.get(username=username)
+    user_data = User.objects.get(pk=public['id'])
     if public['id'] == user_data.id:
         context = {
             'user_data': user_data,
@@ -162,3 +162,10 @@ def user_edit_page(request):
 
 def our_team_view(request):
     return render(request, 'home/ourTeam.html')
+
+
+def base_view(request):
+    public = jwt.decode(request.COOKIES['JWT_TOKEN'][2:-1], settings.SECRET_KEY, algorithms=["HS256"])
+    username = User.objects.get(pk=public['id'])
+    context = {'username': username}
+    return render(request, 'base.html', context)

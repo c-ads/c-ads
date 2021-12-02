@@ -58,13 +58,25 @@
                             </div>
                             <hr>
                             <div class="row">
+                                {% if logged == 1 %}
                                 <div class="col-sm-12">
                                     <a class="btn btn-info " target="__blank" href="{% url 'saprgramapp:edit_page' %}">Edit</a>
                                 </div>
+                                {% else %}
+                                {% endif %}
                             </div>
                         </div>
                     </div>
 
+                    {% if logged == 1 %}
+                    <div class="col-sm-12">
+                        <a class="btn btn-info " target="__blank" href="{% url 'saprgramapp:add_pub' %}">Add</a>
+                    </div>
+                    {% else %}
+                    {% endif %}
+                    {% for pub in user_posts %}
+                            <img src="{{ pub.user_photo.url }}" class="img-fluid ml-2 mb-2" alt="" height="300px" width="300px">
+                    {% endfor %}
                 </div>
             </div>
             </div>

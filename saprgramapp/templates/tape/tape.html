@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block body %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <div class="test">
     {% for post in posts %}
-        <div>
-            <img src="{{ post.user_photo.url }}" alt="" width="500" height="500">
-            <p>
+
+            <img src="{{ post.user_photo.url }}"  class="img-fluid rounded mx-auto d-block" alt="" width="400" height="400">
+            <p class="text-center">
                 <span>{{ post.data }}</span>
                 <span>{{ post.date | date:"Y M d" }}</span>
             </p>
-        </div>
+
     {% endfor %}
+    </div>
 {% endblock %}

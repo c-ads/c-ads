@@ -89,10 +89,12 @@ class AddingPublicationForm(ModelForm):
             'user_photo': FileInput(attrs={
                 'id': 'avatar',
                 'type': 'file',
+                'class': 'form-control col-md-3 ml-5 pl-5',
                 'placeholder': 'Upload photo'
             }),
             'data': TextInput(attrs={
                 'id': 'pub_data',
+                'class': 'form-control col-md-3 ml-5 pl-5',
                 'type': 'text'
             })
         }
